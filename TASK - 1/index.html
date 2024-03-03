@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Landing Page</title>
+</head>
+
+<body>
+	<nav>
+		<div class="heading">Landing Page</div>
+		<span class="sideMenuButton"
+			onclick="openNavbar()">
+			☰
+		</span>
+
+		<div class="navbar">
+			<ul>
+				<li><a href="#Home">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Side navigation bar for 
+		responsive website -->
+	<div class="sideNavigationBar"
+		id="sideNavigationBar">
+		<a href="#" class="closeButton"
+			onclick="closeNavbar()">
+			
+		</a>
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Sign Up</a>
+	</div>
+
+	<!-- Content -->
+	<div class="line" id="Home">
+		<div class="side1">
+			<h1>VISHAL MISHRA</h1>
+			<button>
+				<a href=
+"#">
+					Explore More
+				</a>
+			</button>
+		</div>
+		<div class="side2">
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220630132824/HTML-Full-Form.jpg"
+				width="500">
+		</div>
+	</div>
+
+	<section class="about" id="My Projects">
+		<div class="content">
+			<div class="title">
+				<span>Courses</span>
+			</div>
+			<div class="boxes">
+				<div class="box">
+					<div class="topic">
+						<a href="" target="_blank">
+							CSS
+						</a>
+					</div>
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam sequi nulla dolores est tenetur corporis, reiciendis fuga eos! Et commodi deserunt, suscipit accusamus odit consectetur optio ut enim itaque ad?
+					</p>
+				</div>
+				<div class="box">
+
+					<div class="topic">
+						<a href="" target="_blank">
+							HTML
+						</a>
+					</div>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum optio iste rerum voluptatum magnam quos distinctio, quis architecto temporibus vero obcaecati voluptatem beatae explicabo sequi consequuntur rem, aut in debitis.
+					</p>
+				</div>
+
+				<div class="box">
+					<div class="topic">
+						<a href="" target="_blank">
+							Javascript
+						</a>
+					</div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam assumenda enim, beatae distinctio rem amet natus ratione accusamus voluptatum soluta eaque at numquam sapiente perspiciatis fuga! Cupiditate accusamus placeat quod.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact" id="contact">
+		<div class="content">
+			<div class="title"><span>Sign Up</span></div>
+			<div class="contactMenu">
+				<div class="input1">
+					<div class="label1">Your Name</div>
+					<div class="input2">
+						<input type="text"
+							placeholder="Enter your Name here">
+					</div>
+					<div class="label1">
+						<label>Your Email</label>
+					</div>
+					<div class="input2">
+						<input type="text"
+							placeholder="Enter your Email here">
+					</div>
+					<div class="label1">
+						<label>Your Password</label>
+					</div>
+					<div class="input2">
+						<input type="password"
+							placeholder="Enter your Password here">
+					</div>
+					<div class="button">
+						<button>Sign Up</button>
+					</div>
+				</div>
+				<div class="input3">
+					<div class="rightside1">
+						<div class="title1">
+							<span>
+								Contact Us
+							</span>
+						</div>
+						<div class="content1">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae labore non unde rem tempora molestias quisquam quasi repellendus veniam dolores?
+						</div>
+						<div class="title1">
+							<span>More Information</span>
+						</div>
+						<div class="content1">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequuntur officia tenetur, repellendus adipisci explicabo rem distinctio a blanditiis obcaecati in facilis corporis quaerat quis qui ipsum non sint quisquam.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer section -->
+	<footer>
+		<div class="footer">
+			<span>
+				Created By
+				<a href="#"
+					target="_blank">
+					VISHAL MISHRA
+				</a>
+			</span>
+		</div>
+	</footer>
+	<script>
+        function openNavbar() {
+	document.getElementById("sideNavigationBar")
+		.style.width = "50%";
+}
+function closeNavbar() {
+	document.getElementById("sideNavigationBar")
+		.style.width = "0%";
+}
+
+    </script>
+</body>
+
+</html>
