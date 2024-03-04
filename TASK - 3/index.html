@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #141718;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .converter-container {
+            background-color: #33d458;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #6fc272;
+        }
+
+        button {
+            background-color: #112011;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeIn {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="converter-container fadeIn">
+        <h1>Temperature Converter</h1>
+        <label for="celsius">Celsius:</label>
+        <input type="number" id="celsius" placeholder="Enter temperature in Celsius" oninput="convertTemperature()">
+        <label for="fahrenheit">Fahrenheit:</label>
+        <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit" oninput="convertTemperature()">
+        <button onclick="swapUnits()">Swap Units</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            var celsiusInput = document.getElementById('celsius');
+            var fahrenheitInput = document.getElementById('fahrenheit');
+            var resultDiv = document.getElementById('result');
+
+            if (celsiusInput.value !== '') {
+                var celsius = parseFloat(celsiusInput.value);
+                var fahrenheit = (celsius * 9 / 5) + 32;
+                fahrenheitInput.value = fahrenheit.toFixed(2);
+                resultDiv.innerText = `${celsius} Celsius is equal to ${fahrenheit.toFixed(2)} Fahrenheit`;
+            } else if (fahrenheitInput.value !== '') {
+                var fahrenheit = parseFloat(fahrenheitInput.value);
+                var celsius = (fahrenheit - 32) * 5 / 9;
+                celsiusInput.value = celsius.toFixed(2);
+                resultDiv.innerText = `${fahrenheit} Fahrenheit is equal to ${celsius.toFixed(2)} Celsius`;
+            } else {
+                resultDiv.innerText = '';
+            }
+        }
+
+        function swapUnits() {
+            var celsiusInput = document.getElementById('celsius');
+            var fahrenheitInput = document.getElementById('fahrenheit');
+
+            var temp = celsiusInput.value;
+            celsiusInput.value = fahrenheitInput.value;
+            fahrenheitInput.value = temp;
+
+            convertTemperature();
+        }
+    </script>
+</body>
+
+</html>
